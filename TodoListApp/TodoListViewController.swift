@@ -11,11 +11,14 @@ class TodoListViewController: UITableViewController {
     
     //MARK: - variables
     var itemArray = ["khaled","hussien","khalifa"]
-   
+    let Defaults = UserDefaults.standard
     
     //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let items = Defaults.array(forKey: "ToDoItemArr") as? [String]{
+            itemArray = items
+        }
         
     }
     
@@ -26,6 +29,7 @@ class TodoListViewController: UITableViewController {
         let alert = UIAlertController(title: "Add new ToDo item", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add item", style: .default) { action in
             self.itemArray.append(textField.text!)
+            self.Defaults.set(self.itemArray, forKey: "ToDoItemArr")
             self.tableView.reloadData()
         }
         alert.addTextField { alertTextField in
@@ -51,7 +55,6 @@ extension TodoListViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(itemArray[indexPath.row])
         
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark{
             tableView.cellForRow(at: indexPath)?.accessoryType = .none

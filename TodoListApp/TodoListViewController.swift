@@ -8,13 +8,38 @@
 import UIKit
 
 class TodoListViewController: UITableViewController {
-    let itemArray = ["khaled","hussien","khalifa"]
+    
+    //MARK: - variables
+    var itemArray = ["khaled","hussien","khalifa"]
+   
+    
+    //MARK: - lifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
     
+    //MARK: - Actions
     
+    @IBAction func addBtnTapped(_ sender: UIBarButtonItem) {
+        var textField = UITextField()
+        let alert = UIAlertController(title: "Add new ToDo item", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Add item", style: .default) { action in
+            self.itemArray.append(textField.text!)
+            self.tableView.reloadData()
+        }
+        alert.addTextField { alertTextField in
+            alertTextField.placeholder = "Create new item"
+            textField = alertTextField
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
+//MARK: - UiTableViewDelegate
+extension TodoListViewController {
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
@@ -27,8 +52,7 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(itemArray[indexPath.row])
-      
-       
+        
         if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark{
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
         }else{
@@ -38,8 +62,4 @@ class TodoListViewController: UITableViewController {
         // here to didnt keeping selecting the cell after we select it
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    
-
 }
-

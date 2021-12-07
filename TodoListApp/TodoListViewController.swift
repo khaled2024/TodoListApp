@@ -25,6 +25,21 @@ class TodoListViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(itemArray[indexPath.row])
+      
+       
+        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark{
+            tableView.cellForRow(at: indexPath)?.accessoryType = .none
+        }else{
+            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
+        }
+        
+        // here to didnt keeping selecting the cell after we select it
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    
 
 }
 

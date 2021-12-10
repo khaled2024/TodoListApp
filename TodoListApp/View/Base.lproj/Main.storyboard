@@ -15,17 +15,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="Cca-lg-4vK">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="hva-RR-ncD" id="cjq-2W-Ohq"/>
-                            </connections>
-                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoItemCell" id="TRN-cM-TnG">
-                                <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="TRN-cM-TnG" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TRN-cM-TnG" id="148-zg-AqL">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -40,14 +32,24 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Items" id="fay-Xm-KWe">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="TLy-MW-3Gj">
-                            <color key="tintColor" red="0.1107735203" green="0.30762119970000001" blue="0.47995580809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addBtnTapped:" destination="hva-RR-ncD" id="0XK-T4-f3d"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchBar" destination="Cca-lg-4vK" id="fWt-6m-DqB"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bSZ-lq-QiP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" text="" id="Cca-lg-4vK">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="hva-RR-ncD" id="cjq-2W-Ohq"/>
+                    </connections>
+                </searchBar>
             </objects>
             <point key="canvasLocation" x="691" y="58"/>
         </scene>
@@ -59,13 +61,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="MjL-Zh-S5Y">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.142698382563925" green="0.40788103987373842" blue="0.63774463385757563" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.1107735203" green="0.30762119970000001" blue="0.47995580809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -76,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="-1194" y="58"/>
         </scene>
-        <!--To-do-->
+        <!-- To-do-->
         <scene sceneID="pj4-3v-JTF">
             <objects>
                 <tableViewController id="q3y-GI-lLK" customClass="CategoryViewController" customModule="TodoListApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -85,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="vv7-Qu-Mft">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="vv7-Qu-Mft" customClass="SwipeTableViewCell" customModule="SwipeCellKit">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vv7-Qu-Mft" id="OTz-py-eJd">
@@ -99,9 +94,10 @@
                             <outlet property="delegate" destination="q3y-GI-lLK" id="3Wm-W8-SNu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="To-do" id="khe-7Z-POo">
+                    <navigationItem key="navigationItem" title=" To-do" id="khe-7Z-POo">
+                        <barButtonItem key="backBarButtonItem" title=" " id="vMV-yn-YBz"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="82a-MH-YKI">
-                            <color key="tintColor" red="0.1107735203" green="0.30762119970000001" blue="0.47995580809999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="tintColor" red="0.10980392160000001" green="0.30588235289999999" blue="0.47843137250000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="addBtnTapped:" destination="q3y-GI-lLK" id="jaE-No-JD2"/>
                             </connections>

@@ -17,6 +17,7 @@
 		EACD3494275FC759006C29A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EACD3492275FC759006C29A4 /* LaunchScreen.storyboard */; };
 		EADC5EF12762997000A79ACF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC5EF02762997000A79ACF /* Item.swift */; };
 		EADC5EF32762997C00A79ACF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC5EF22762997C00A79ACF /* Category.swift */; };
+		EADC5EF52762BADB00A79ACF /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EADC5EF42762BADB00A79ACF /* SwipeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		EACD3495275FC759006C29A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EADC5EF02762997000A79ACF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		EADC5EF22762997C00A79ACF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		EADC5EF42762BADB00A79ACF /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				EA9B5D2D27611C620024382C /* CategoryViewController.swift */,
 				EACD348B275FC758006C29A4 /* TodoListViewController.swift */,
+				EADC5EF42762BADB00A79ACF /* SwipeTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				EA9B5D2E27611C620024382C /* CategoryViewController.swift in Sources */,
 				EACD348C275FC758006C29A4 /* TodoListViewController.swift in Sources */,
 				EACD3488275FC758006C29A4 /* AppDelegate.swift in Sources */,
+				EADC5EF52762BADB00A79ACF /* SwipeTableViewController.swift in Sources */,
 				EADC5EF12762997000A79ACF /* Item.swift in Sources */,
 				EACD348A275FC758006C29A4 /* SceneDelegate.swift in Sources */,
 				EADC5EF32762997C00A79ACF /* Category.swift in Sources */,

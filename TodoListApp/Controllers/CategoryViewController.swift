@@ -21,6 +21,16 @@ class CategoryViewController: SwipeTableViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        if let navBar = navigationController?.navigationBar{
+            navBar.tintColor = UIColor(hexString: "2468A3")
+            if let colorHex = UIColor(hexString: "2468A3") {
+                navBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor : colorHex]
+                navBar.barTintColor = colorHex
+            }
+        }
+    }
+    
 //MARK: - Functions
     private func save(category: Category){
           do{
